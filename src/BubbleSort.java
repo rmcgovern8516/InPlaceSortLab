@@ -54,4 +54,28 @@ public class BubbleSort {
         }
         return output;
     }
+
+    public static String checkSum(int[] before, int[] after)
+    {
+        int beforeSum = 0;
+        int afterSum = 0;
+        String output = "";
+        for (int i=0; i<before.length; i++)
+        {
+            beforeSum = beforeSum + before[i];
+        }
+        for (int j=0; j<after.length; j++)
+        {
+            afterSum = afterSum + after[j];
+        }
+        if (beforeSum == afterSum)
+        {
+            output = "The sums are equal.";
+        }
+        else
+        {
+            output = "The sums are not equal.";
+        }
+        return output;
+    }
 }
