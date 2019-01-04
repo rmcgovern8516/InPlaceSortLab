@@ -16,7 +16,7 @@ public class BubbleSort {
             {
                 if (arr[i] > arr[i+1])
                 {
-                        swap(arr, arr[i],arr[i+1]);
+                        swap(arr, i,i+1);
                         count++;
                 }
             }
@@ -31,5 +31,27 @@ public class BubbleSort {
             arr[i] = (int)(Math.random()*10001);
         }
         return arr;
+    }
+
+    public static String isSorted(int[] arr)
+    {
+        int count = 0;
+        String output = "";
+        for (int i=0; i<arr.length-1; i++)
+        {
+            if (arr[i] <= arr[i+1])
+            {
+                count++;
+                if (count==arr.length-1)
+                {
+                    output = "It is sorted.";
+                }
+                else
+                {
+                    output = "It is not sorted.";
+                }
+            }
+        }
+        return output;
     }
 }
