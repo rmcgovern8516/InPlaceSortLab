@@ -33,6 +33,16 @@ public class InPlaceSorts {
         return arr;
     }
 
+    public static double[] randDoubleArr(int count)
+    {
+        double[] arrDouble = new double[count];
+        for (int i=0; i<count; i++)
+        {
+            arrDouble[i] = (int)(Math.random()*10001);
+        }
+        return arrDouble;
+    }
+
     public static String isSorted(int[] arr)
     {
         int count = 0;
