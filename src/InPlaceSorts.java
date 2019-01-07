@@ -1,4 +1,4 @@
-public class BubbleSort {
+public class InPlaceSorts {
     public static void swap(int[] arr, int i, int j)
     {
         int temp = arr[i];
@@ -77,5 +77,21 @@ public class BubbleSort {
             output = "The sums are not equal.";
         }
         return output;
+    }
+
+    public static void selectionSort(int[] arr)
+    {
+        for (int i=0; i<arr.length; i++)
+        {
+            int minIter = i;
+            for (int j=i; j<arr.length; j++)
+            {
+                if (arr[j]<arr[minIter]){ minIter = j; }
+            }
+            if (minIter!=i)
+            {
+                swap(arr, i, minIter);
+            }
+        }
     }
 }
