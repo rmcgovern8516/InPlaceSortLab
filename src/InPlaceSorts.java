@@ -38,7 +38,7 @@ public class InPlaceSorts {
         double[] arrDouble = new double[count];
         for (int i=0; i<count; i++)
         {
-            arrDouble[i] = (int)(Math.random()*10001);
+            arrDouble[i] = (double)(Math.random()*10001);
         }
         return arrDouble;
     }
