@@ -5,6 +5,12 @@ public class InPlaceSorts {
         arr[i]=arr[j];
         arr[j]=temp;
     }
+    public static void doubleSwap(double[] arr, int i, int j)
+    {
+        double temp = arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
+    }
 
     public static void bubbleSort(int[] arr)
     {
@@ -89,7 +95,7 @@ public class InPlaceSorts {
         return output;
     }
 
-    public static void selectionSort(int[] arr)
+    public static void selectionSort(double[] arr)
     {
         for (int i=0; i<arr.length; i++)
         {
@@ -100,7 +106,7 @@ public class InPlaceSorts {
             }
             if (minIter!=i)
             {
-                swap(arr, i, minIter);
+                doubleSwap(arr, i, minIter);
             }
         }
     }

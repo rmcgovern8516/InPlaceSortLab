@@ -26,8 +26,13 @@ public class Runner {
         System.out.println();
 
         //Sort it using bubbleSort
-        InPlaceSorts.selectionSort(intArrBefore);
+        InPlaceSorts.bubbleSort(intArrBefore);
         int[] intArrAfter = intArrBefore;
+
+        InPlaceSorts.selectionSort(doubArrBefore);
+        double[] doubArrAfter = doubArrBefore;
+
+        System.out.println("____________________________________________");
 
         //Print it out after you sort
         System.out.print("Int Array After: ");
@@ -36,7 +41,10 @@ public class Runner {
         }
         System.out.println();
 
-        System.out.println(InPlaceSorts.isSorted(intArrAfter));
-        System.out.println(InPlaceSorts.checkSum(intArrBefore,intArrAfter));
+        System.out.print("Double Array After: ");
+        for (double num:doubArrAfter){
+            System.out.print(num+" ");
+        }
+        System.out.println();
     }
 }
