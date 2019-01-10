@@ -11,8 +11,44 @@ public class InPlaceSorts {
         arr[i]=arr[j];
         arr[j]=temp;
     }
+    public static void stringSwap(String[] arr, int i, int j)
+    {
+        String temp = arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
+    }
 
-    public static void bubbleSort(int[] arr)
+    public static int[] copyIntArray(int[] arr)
+    {
+        int[] intCopy = new int[arr.length];
+        for (int i=0; i<arr.length; i++)
+        {
+            intCopy[i] = arr[i];
+        }
+        return intCopy;
+    }
+
+    public static double[] copyDoubleArray(double[] arr)
+    {
+        double[] doubleCopy = new double[arr.length];
+        for (int i=0; i<arr.length; i++)
+        {
+            doubleCopy[i] = arr[i];
+        }
+        return doubleCopy;
+    }
+
+    public static String[] copyStringArray(String[] arr)
+    {
+        String[] stringCopy = new String[arr.length];
+        for (int i=0; i<arr.length; i++)
+        {
+            stringCopy[i] = arr[i];
+        }
+        return stringCopy;
+    }
+
+    public static void bubbleSort(String[] arr)
     {
         int count = 1;
         while (count != 0)
@@ -20,9 +56,9 @@ public class InPlaceSorts {
             count = 0;
             for (int i=0; i<arr.length-1; i++)
             {
-                if (arr[i] > arr[i+1])
+                if (arr[i].compareTo(arr[i+1])<=0)
                 {
-                        swap(arr, i,i+1);
+                        stringSwap(arr, i,i+1);
                         count++;
                 }
             }
@@ -107,6 +143,21 @@ public class InPlaceSorts {
             if (minIter!=i)
             {
                 doubleSwap(arr, i, minIter);
+            }
+        }
+    }
+
+    public static void insertionSort (int[] arr)
+    {
+        for (int i=0; i<arr.length; i++)
+        {
+            for (int j=i; j>0; j--)
+            {
+                if (arr[j-1]>arr[j])
+                {
+                    swap(arr, j-1,j);
+                }
+                else { j=0; }
             }
         }
     }
