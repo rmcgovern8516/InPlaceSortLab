@@ -1,4 +1,6 @@
 public class InPlaceSorts {
+
+    //SWAPS
     public static void swap(int[] arr, int i, int j)
     {
         int temp = arr[i];
@@ -18,6 +20,9 @@ public class InPlaceSorts {
         arr[j]=temp;
     }
 
+
+
+    //COPIES
     public static int[] copyIntArray(int[] arr)
     {
         int[] intCopy = new int[arr.length];
@@ -48,6 +53,9 @@ public class InPlaceSorts {
         return stringCopy;
     }
 
+
+
+    //SORTS
     public static void bubbleSort(String[] arr)
     {
         int count = 1;
@@ -63,72 +71,6 @@ public class InPlaceSorts {
                 }
             }
         }
-    }
-
-    public static int[] randIntArr(int count)
-    {
-        int[] arr = new int[count];
-        for (int i=0; i<count; i++)
-        {
-            arr[i] = (int)(Math.random()*10001);
-        }
-        return arr;
-    }
-
-    public static double[] randDoubleArr(int count)
-    {
-        double[] arrDouble = new double[count];
-        for (int i=0; i<count; i++)
-        {
-            arrDouble[i] = (double)(Math.random()*10001);
-        }
-        return arrDouble;
-    }
-
-    public static String isSorted(int[] arr)
-    {
-        int count = 0;
-        String output = "";
-        for (int i=0; i<arr.length-1; i++)
-        {
-            if (arr[i] <= arr[i+1])
-            {
-                count++;
-                if (count==arr.length-1)
-                {
-                    output = "It is sorted.";
-                }
-                else
-                {
-                    output = "It is not sorted.";
-                }
-            }
-        }
-        return output;
-    }
-
-    public static String checkSum(int[] before, int[] after)
-    {
-        int beforeSum = 0;
-        int afterSum = 0;
-        String output = "";
-        for (int i=0; i<before.length; i++)
-        {
-            beforeSum = beforeSum + before[i];
-        }
-        for (int j=0; j<after.length; j++)
-        {
-            afterSum = afterSum + after[j];
-        }
-        if (beforeSum == afterSum)
-        {
-            output = "The sums are equal.";
-        }
-        else
-        {
-            output = "The sums are not equal.";
-        }
-        return output;
     }
 
     public static void selectionSort(double[] arr)
@@ -160,5 +102,145 @@ public class InPlaceSorts {
                 else { j=0; }
             }
         }
+    }
+
+
+
+    //RANDOM ARRAYS
+    public static int[] randIntArr(int count)
+    {
+        int[] arr = new int[count];
+        for (int i=0; i<count; i++)
+        {
+            arr[i] = (int)(Math.random()*10001);
+        }
+        return arr;
+    }
+
+    public static double[] randDoubleArr(int count)
+    {
+        double[] arrDouble = new double[count];
+        for (int i=0; i<count; i++)
+        {
+            arrDouble[i] = (double)(Math.random()*10001);
+        }
+        return arrDouble;
+    }
+
+    public static String[] randStringArr(int num, int length)
+    {
+        String[] arrString = new String[num];
+        while (num>0)
+        {
+            int i=0;
+            String s = "";
+            while (i<length)
+            {
+                char c = (char)((Math.random()*26)+97);
+                s=s+c;
+                i++;
+            }
+            num--;
+            arrString[num] = s;
+        }
+        return arrString;
+    }
+
+
+
+    //CHECK SORTS
+    public static String isIntSorted(int[] arr)
+    {
+        int count = 0;
+        String output = "";
+        for (int i=0; i<arr.length-1; i++)
+        {
+            if (arr[i] <= arr[i+1])
+            {
+                count++;
+                if (count==arr.length-1)
+                {
+                    output = "It is sorted.";
+                }
+                else
+                {
+                    output = "It is not sorted.";
+                }
+            }
+        }
+        return output;
+    }
+
+    public static String isDoubleSorted(double[] arr)
+    {
+        int count = 0;
+        String output = "";
+        for (int i=0; i<arr.length-1; i++)
+        {
+            if (arr[i] <= arr[i+1])
+            {
+                count++;
+                if (count==arr.length-1)
+                {
+                    output = "It is sorted.";
+                }
+                else
+                {
+                    output = "It is not sorted.";
+                }
+            }
+        }
+        return output;
+    }
+
+
+
+    //CHECK SUMS
+    public static String checkIntSum(int[] before, int[] after)
+    {
+        int beforeSum = 0;
+        int afterSum = 0;
+        String output = "";
+        for (int i=0; i<before.length; i++)
+        {
+            beforeSum = beforeSum + before[i];
+        }
+        for (int j=0; j<after.length; j++)
+        {
+            afterSum = afterSum + after[j];
+        }
+        if (beforeSum == afterSum)
+        {
+            output = "The sums are equal.";
+        }
+        else
+        {
+            output = "The sums are not equal.";
+        }
+        return output;
+    }
+
+    public static String checkDoubleSum(double[] before, double[] after)
+    {
+        double beforeSum = 0.0;
+        double afterSum = 0.0;
+        String output = "";
+        for (int i=0; i<before.length; i++)
+        {
+            beforeSum = beforeSum + before[i];
+        }
+        for (int j=0; j<after.length; j++)
+        {
+            afterSum = afterSum + after[j];
+        }
+        if (beforeSum == afterSum)
+        {
+            output = "The sums are equal.";
+        }
+        else
+        {
+            output = "The sums are not equal.";
+        }
+        return output;
     }
 }

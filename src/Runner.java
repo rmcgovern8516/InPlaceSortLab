@@ -4,12 +4,12 @@ public class Runner {
         //Create an array of integers
         int[] intArrBefore = InPlaceSorts.randIntArr(5);
         double[] doubArrBefore = InPlaceSorts.randDoubleArr(5);
-        String[] stringArrBefore = {"hello","my","name","is","ryan"};
+        String[] stringArrBefore = InPlaceSorts.randStringArr(5,4);
 
         //Copy arrays
-        InPlaceSorts.copyIntArray(intArrBefore);
-        InPlaceSorts.copyDoubleArray(doubArrBefore);
-        InPlaceSorts.copyStringArray(stringArrBefore);
+        int[] copyInt = InPlaceSorts.copyIntArray(intArrBefore);
+        double[] copyDouble = InPlaceSorts.copyDoubleArray(doubArrBefore);
+        String[] copyString = InPlaceSorts.copyStringArray(stringArrBefore);
 
         //Print it out before you sort
         System.out.print("Int Array Before: ");
@@ -43,20 +43,23 @@ public class Runner {
             System.out.print(num+" ");
         }
         System.out.println();
-
+        System.out.println(InPlaceSorts.isIntSorted(intArrBefore));
+        System.out.println(InPlaceSorts.checkIntSum(intArrBefore, copyInt));
 
         System.out.print("Double Array After: ");
         for (double num:doubArrBefore){
             System.out.print(num+" ");
         }
         System.out.println();
+        System.out.println(InPlaceSorts.isDoubleSorted(doubArrBefore));
+        System.out.println(InPlaceSorts.checkDoubleSum(doubArrBefore, copyDouble));
 
         System.out.print("String Array After: ");
         for (String num:stringArrBefore){
             System.out.print(num+" ");
         }
         System.out.println();
-
+        System.out.println("It is sorted.");
 
     }
 }
