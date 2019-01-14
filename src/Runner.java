@@ -2,9 +2,9 @@ public class Runner {
 
     public static void main(String[] args) {
         //Create an array of integers
-        int[] intArrBefore = InPlaceSorts.randIntArr(5);
-        double[] doubArrBefore = InPlaceSorts.randDoubleArr(5);
-        String[] stringArrBefore = InPlaceSorts.randStringArr(5,4);
+        int[] intArrBefore = InPlaceSorts.randIntArr(1000);
+        double[] doubArrBefore = InPlaceSorts.randDoubleArr(1000);
+        String[] stringArrBefore = InPlaceSorts.randStringArr(1000,4);
 
         //Copy arrays
         int[] copyInt = InPlaceSorts.copyIntArray(intArrBefore);
@@ -30,12 +30,38 @@ public class Runner {
         }
         System.out.println();
 
-        //Sort it using bubbleSort
+
+        //Setting Timers Up
+        long insertionTimeStart = 0;
+        long selectionTimeStart = 0;
+        long bubbleTimeStart = 0;
+        long insertionTimeStop = 0;
+        long selectionTimeStop = 0;
+        long bubbleTimeStop = 0;
+
+        //Sorting + Timers
+        insertionTimeStart = System.nanoTime();
         InPlaceSorts.insertionSort(intArrBefore);
+        insertionTimeStop = System.nanoTime()-insertionTimeStart;
+
+        selectionTimeStart = System.nanoTime();
         InPlaceSorts.selectionSort(doubArrBefore);
+        selectionTimeStop = System.nanoTime()-selectionTimeStart;
+
+        bubbleTimeStart = System.nanoTime();
         InPlaceSorts.bubbleSort(stringArrBefore);
+        bubbleTimeStop = System.nanoTime()-bubbleTimeStart;
 
         System.out.println("____________________________________________");
+
+
+
+        //Printing out sort times
+        System.out.println("Time for insertion sort: "+insertionTimeStop+" nanoseconds");
+        System.out.println("Time for selection sort: "+selectionTimeStop+" nanoseconds");
+        System.out.println("Time for bubble sort: "+bubbleTimeStop+" nanoseconds");
+        System.out.println("____________________________________________");
+
 
         //Print it out after you sort
         System.out.print("Int Array After: ");
@@ -60,6 +86,5 @@ public class Runner {
         }
         System.out.println();
         System.out.println("It is sorted.");
-
     }
 }
